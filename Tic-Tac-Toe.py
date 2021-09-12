@@ -1,6 +1,16 @@
 import random
 
 
+# Example Board
+def example_board():
+    print()
+    print(' ' + '1' + ' | ' + '2' + ' | ' + '3')
+    print('---|---|---')
+    print(' ' + '4' + ' | ' + '5' + ' | ' + '6')
+    print('---|---|---')
+    print(' ' + '7' + ' | ' + '8' + ' | ' + '9')
+    
+
 # Print Tic-Tac-Toe Board
 def print_board(marker, player=' ', position=0):
     marker[position] = player
@@ -95,7 +105,7 @@ def main_runner():
             player1_marker, player2_marker = player_choose()
             turn = choose_toggle_player()
             print(turn + ' is First To Move')
-            play_game = input("Are you Ready? Press [Y | N]").upper()
+            play_game = input("Are you Ready? Press [Y | N]: ").upper()
 
             if play_game == 'Y':
                 game_on = True
@@ -104,7 +114,6 @@ def main_runner():
 
             while game_on:
                 if turn == 'Player 1':
-                    print_board(ttt_board)
                     pos = player_choose_position(ttt_board)
                     print_board(ttt_board, player1_marker, pos)
 
@@ -119,7 +128,6 @@ def main_runner():
                         else:
                             turn = 'Player 2'
                 else:
-                    print_board(ttt_board)
                     pos = player_choose_position(ttt_board)
                     print_board(ttt_board, player2_marker, pos)
 
@@ -143,7 +151,7 @@ def main_runner():
             player1_marker, player2_marker = player_choose()
             turn = choose_toggle_computerplayer()
             print(turn + ' is First To Move')
-            play_game = input("Are you Ready? Press [Y | N]").upper()
+            play_game = input("Are you Ready? Press [Y | N]: ").upper()
 
             if play_game == 'Y':
                 game_on = True
@@ -152,7 +160,6 @@ def main_runner():
 
             while game_on:
                 if turn == 'Player 1':
-                    print_board(ttt_board)
                     pos = player_choose_position(ttt_board)
                     print_board(ttt_board, player1_marker, pos)
 
@@ -167,7 +174,6 @@ def main_runner():
                             turn = 'Computer'
 
                 else:
-                    print_board(ttt_board)
                     pos = computer_choose_position(ttt_board)
                     print_board(ttt_board, player2_marker, pos)
 
@@ -185,6 +191,9 @@ def main_runner():
                 break
 
     print("Welcome to Tic-Tac-Toe", end='\n')
+    print()
+    example_board()
+    print()
     print("Choose Mode")
     print("1. Player vs Player")
     print("2. Player vs Computer")
