@@ -174,6 +174,7 @@ def main_runner():
                             turn = 'Computer'
 
                 else:
+                    print('Computer Turn')
                     pos = computer_choose_position(ttt_board)
                     print_board(ttt_board, player2_marker, pos)
 
